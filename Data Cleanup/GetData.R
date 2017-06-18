@@ -3,9 +3,7 @@
 
 library(plyr)
 
-setwd("/Data/")
-
 # http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page
-
+setwd("Data")
 # read csv file
 bk <- read.csv("rollingsales_brooklyn.csv",skip=4,header=TRUE)
