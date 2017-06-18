@@ -4,6 +4,8 @@
 library(plyr)
 
 # http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page
-setwd("Data")
+setwd("~/Data/")
 # read csv file
+# si <- read.csv("rollingsales_statenisland.csv",skip=4,header=TRUE)
+
 bk <- read.csv("rollingsales_brooklyn.csv",skip=4,header=TRUE)
