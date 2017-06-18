@@ -2,6 +2,7 @@
 # Taken from Doing Data Science Assignment Week 6 by Dr. Mahesh Fernando
 # Data Preparation
 
+source('../GetData.R')
 ## Check the data
 head(bk)
 summary(bk)
