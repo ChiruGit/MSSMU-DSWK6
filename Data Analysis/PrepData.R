@@ -21,6 +21,7 @@ count(is.na(bk$SALE.PRICE.N))
 
 names(bk) <- tolower(names(bk)) # make all variable names lower case
 
+
 ## Get rid of leading digits
 bk$gross.sqft <- as.numeric(gsub("[^[:digit:]]","", bk$gross.square.feet))
 bk$land.sqft <- as.numeric(gsub("[^[:digit:]]","", bk$land.square.feet))
@@ -34,7 +35,7 @@ detach(bk)
 
 ## keep only the actual sales
 
-bk.sale <- bk[bk$sale.price.n!=0,]
+bk.sale <- bk[bk$sale.price.n!=0,]      # should this be != NA?
 plot(bk.sale$gross.sqft,bk.sale$sale.price.n)
 plot(log10(bk.sale$gross.sqft),log10(bk.sale$sale.price.n))
 
