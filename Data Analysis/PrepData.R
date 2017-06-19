@@ -21,14 +21,15 @@ str(si) # Very handy function!
 ## start with digits. We use the gsub command to replace them with a blank space.
 # We create a new variable that is a "clean' version of sale.price.
 # And sale.price.n is numeric, not a factor.
+
 si$SALE.PRICE.N <- as.numeric(gsub("[^[:digit:]]","", si$SALE.PRICE))
 count(is.na(si$SALE.PRICE.N))
-
 names(si) <- tolower(names(si)) # make all variable names lower case
 
 
 ## Get rid of leading digits
 ## Start by <Maryam Shahini>
+
 si$gross.sqft <- as.numeric(gsub("[^[:digit:]]","", si$gross.square.feet))
 si$land.sqft <- as.numeric(gsub("[^[:digit:]]","", si$land.square.feet))
 si$year.built <- as.numeric(as.character(si$year.built))
