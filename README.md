@@ -4,7 +4,7 @@
 
 --- 
 
-# Our Assignment:  Staten Island
+# Our Assignment:  Staten Island Sales Data Analysis
 
 ---
 
