@@ -37,8 +37,8 @@ si$year.built <- as.numeric(as.character(si$year.built))
 
 ## Start by <Kim Wong> : Data Exploration
 
-## do a bit of exploration to make sure there's not anything
-## weird going on with sale prices
+## do a bit of exploration to make sure there's not anything weird going on with sale prices
+
 attach(si)
 hist(sale.price.n) 
 detach(si)
