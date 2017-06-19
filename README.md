@@ -21,7 +21,7 @@
 
 ## File Organization
 * Repo Main folder: contains any "main.r' type files, README
-* Data Cleaning folder:  Contains code for getting & cleaning data
+* Data Cleanup folder:  Contains code for getting & cleaning data
 * Data Analysis folder:  Contains statistical analysis code.
  
 
