@@ -6,9 +6,9 @@
 
 source('../GetData.R')
 ## Check the data
-head(bk)
-summary(bk)
-str(bk) # Very handy function!
+head(si)
+summary(si)
+str(si) # Very handy function!
 #Compactly display the internal structure of an R object.
 
 ## End by <Dave Dyer> : Data Load
@@ -21,47 +21,48 @@ str(bk) # Very handy function!
 ## start with digits. We use the gsub command to replace them with a blank space.
 # We create a new variable that is a "clean' version of sale.price.
 # And sale.price.n is numeric, not a factor.
-bk$SALE.PRICE.N <- as.numeric(gsub("[^[:digit:]]","", bk$SALE.PRICE))
-count(is.na(bk$SALE.PRICE.N))
+si$SALE.PRICE.N <- as.numeric(gsub("[^[:digit:]]","", si$SALE.PRICE))
+count(is.na(si$SALE.PRICE.N))
 
-names(bk) <- tolower(names(bk)) # make all variable names lower case
+names(si) <- tolower(names(si)) # make all variable names lower case
 
 
 ## Get rid of leading digits
 ## Start by <Maryam Shahini>
-bk$gross.sqft <- as.numeric(gsub("[^[:digit:]]","", bk$gross.square.feet))
-bk$land.sqft <- as.numeric(gsub("[^[:digit:]]","", bk$land.square.feet))
-bk$year.built <- as.numeric(as.character(bk$year.built))
+si$gross.sqft <- as.numeric(gsub("[^[:digit:]]","", si$gross.square.feet))
+si$land.sqft <- as.numeric(gsub("[^[:digit:]]","", si$land.square.feet))
+si$year.built <- as.numeric(as.character(si$year.built))
 
 ## End by <Maryam Shahini> : Data Clean Up
 
 ## Start by <Kim Wong> : Data Exploration
+
 ## do a bit of exploration to make sure there's not anything
 ## weird going on with sale prices
-attach(bk)
+attach(si)
 hist(sale.price.n) 
-detach(bk)
+detach(si)
 
 ## keep only the actual sales
 
-bk.sale <- bk[bk$sale.price.n!=0,]      # should this be != NA?
-plot(bk.sale$gross.sqft,bk.sale$sale.price.n) # Plot to see any relationship between data [ data exploration]
-plot(log10(bk.sale$gross.sqft),log10(bk.sale$sale.price.n)) # Outliers above indicates doing a log transform might give better view
+si.sale <- si[si$sale.price.n!=0,]      # should this be != NA?
+plot(si.sale$gross.sqft,si.sale$sale.price.n) # Plot to see any relationship between data [ data exploration]
+plot(log10(si.sale$gross.sqft),log10(si.sale$sale.price.n)) # Outliers above indicates doing a log transform might give better view
 
 ## End by <Kim Wong> : Data Exploration
 
 ## Start by <Chiranjeevi Mallavarapu> : Data Analysis
 
 ## for now, let's look at 1-, 2-, and 3-family homes
-bk.homes <- bk.sale[which(grepl("FAMILY",bk.sale$building.class.category)),]
-dim(bk.homes)
-plot(log10(bk.homes$gross.sqft),log10(bk.homes$sale.price.n))
-summary(bk.homes[which(bk.homes$sale.price.n<100000),])
+si.homes <- si.sale[which(grepl("FAMILY",si.sale$building.class.category)),]
+dim(si.homes)
+plot(log10(si.homes$gross.sqft),log10(si.homes$sale.price.n))
+summary(si.homes[which(si.homes$sale.price.n<100000),])
 ""
 
 ## remove outliers that seem like they weren't actual sales
-bk.homes$outliers <- (log10(bk.homes$sale.price.n) <=5) + 0
-bk.homes <- bk.homes[which(bk.homes$outliers==0),]
-plot(log10(bk.homes$gross.sqft),log10(bk.homes$sale.price.n))
+si.homes$outliers <- (log10(si.homes$sale.price.n) <=5) + 0
+si.homes <- si.homes[which(si.homes$outliers==0),]
+plot(log10(si.homes$gross.sqft),log10(si.homes$sale.price.n))
 
 ## End by <Chiranjeevi Mallavarapu> : Data Analysis
