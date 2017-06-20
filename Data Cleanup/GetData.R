@@ -1,5 +1,5 @@
 # Authors: MSSMU_May2017 : Chiranjeevi Mallavarapu, Dave Dyer, Kim Wong, Maryam Shahini 
-# Taken from Doing Data Science Assignment Week 6 by Dr. Mahesh Fernando, TAs Sahil and Raunak
+# Taken from Doing Data Science Assignment Week 6 by Dr. Mahesh Fernando,TAs Sahil and Raunak
 
 ## Start by <Dave Dyer> : Data Gathering
 library(plyr)
