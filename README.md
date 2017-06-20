@@ -24,7 +24,9 @@ Using the Rolling Data Sales website, download and examine another housing sales
 ## File Organization
 * Repo Main folder: contains any "main.r' type files, README
 * Data Cleanup folder:  Contains code for getting & cleaning data 
-  - /DataCleanup/GetData.R: Data gathering from       http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page
+
+  - /DataCleanup/GetData.R: Data gathered from       http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page
+
   - /Data/rollingsales_statenisland.csv : Raw Statenisland housing sales data
 * Data Analysis folder:  Contains statistical analysis code.
  
