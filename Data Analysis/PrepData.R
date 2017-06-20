@@ -25,9 +25,12 @@ str(si) # Very handy function!
 si$SALE.PRICE.N <- as.numeric(gsub("[^[:digit:]]","", si$SALE.PRICE))
 count(is.na(si$SALE.PRICE.N))
 
-##new changes in calculations for gross sqft column
+##new changes in calculations for gross and land sqft column
 si$GROSS.SQUARE.FEET.N <- as.numeric(gsub("[^[:digit:]]","", si$GROSS.SQUARE.FEET))
 count(is.na(si$GROSS.SQUARE.FEET.N))
+si$LAND.SQUARE.FEET.N <- as.numeric(gsub("[^[:digit:]]","", si$LAND.SQUARE.FEET))
+count(is.na(si$LAND.SQUARE.FEET.N))
+
 
 names(si) <- tolower(names(si)) # make all variable names lower case
 
