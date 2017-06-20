@@ -31,8 +31,8 @@ count(is.na(si$GROSS.SQUARE.FEET.N))
 si$LAND.SQUARE.FEET.N <- as.numeric(gsub("[^[:digit:]]","", si$LAND.SQUARE.FEET))
 count(is.na(si$LAND.SQUARE.FEET.N))
 
-
-names(si) <- tolower(names(si)) # make all variable names lower case
+## it coinverts everything variable names to lower case
+names(si) <- tolower(names(si))
 
 
 ## Get rid of leading digits
