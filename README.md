@@ -1,6 +1,6 @@
-# Live Session Assignment 6
+# Live Session Doing Data Science Assignment 6
 ## Case Study Practice - Due Thursday June 23
-### Dave Dyer, Chiranjeevi Mallavarapu, Kim Wong, and Maryam Shahini 
+### Team : Chiranjeevi Mallavarapu, Dave Dyer, Kim Wong and Maryam Shahini 
 
 --- 
 
@@ -8,7 +8,8 @@
 
 ---
 
-__Here is the assignment:__
+Below is from the assignment document given by Dr. Mahesh. 
+
 Using the Rolling Data Sales website, download and examine another housing sales data set (not the one we will use in live session, which is linked here - Rolling Housing Sales for NYC).
 (http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page)
 
@@ -17,18 +18,24 @@ Using the Rolling Data Sales website, download and examine another housing sales
   * A data directory containing files to load in and clean up the data. The clean up should include finding out where there are outliers or missing values, deciding how you will treat them, making sure values you think are numerical are being treated as such (correct R class), etc.
   * An Analysis directory containing a file (or files) for exploratory data analysis on the clean data to visualize compare the square footage and sales price for your neighborhood.
 
-* Deliverable: A link to a repository on GitHub containing the above. I need only one link per group. Since this is a group project, I expect you to divide the labor.
+* Deliverable: A link to a repository on GitHub containing the above. 
 
 ---
 
 ## File Organization
-* Repo Main folder: contains any "main.r' type files, README
-* Data Cleanup folder:  Contains code for getting & cleaning data 
 
-  - /DataCleanup/GetData.R: Data gathered from       http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page
+* Repo Main folder: contains any "main.r' type files, README.md, reference code 'brooklyn.R' provided 
 
-  - /Data/rollingsales_statenisland.csv : Raw Statenisland housing sales data
-* Data Analysis folder:  Contains statistical analysis code.
+* DataCleanup folder:  Contains code for getting & cleaning data, sub folder 'Data' contains data
+  
+  Files:
+  - /DataCleanup/GetData.R: loads data from below source data file 
+  - /Data/rollingsales_statenisland.csv : Raw Statenisland housing sales data, data gathered from               
+     http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page
+
+* DataAnalysis folder:  Contains statistical analysis code
+  Files:
+  - /DataAnalysis/PrepData.R: cleans data for any unwanted rows, explores data and finally removes any outliers
+    and prepares data for visualization
+  
  
-
-
