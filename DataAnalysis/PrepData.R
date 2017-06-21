@@ -29,7 +29,7 @@ count(is.na(si$SALE.PRICE.N))
 ## convert address to address.c (from factor to chr)
 si$address.c<-as.character(si$address)
 ## convert apartment.number from factor to char 
-original.si$apartment.number.c <- as.character(original.si$apartment.number)
+si$apartment.number.c <- as.character(si$apartment.number)
 
 ##new changes in calculations for gross and land sqft column
 
