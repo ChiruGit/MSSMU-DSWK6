@@ -1,6 +1,6 @@
 ---
 title: "StatenIslandOutput"
-author: "Chiranjeevi Mallavarapu"
+author: "CHIRANJEEVI MALLAVARAPU"
 date: "6/21/2017"
 output: html_document
 ---
