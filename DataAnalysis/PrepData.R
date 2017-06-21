@@ -2,18 +2,19 @@
 # Taken from Doing Data Science Assignment Week 6 by Dr. Mahesh Fernando
 # Data Preparation
 
-## Start by <Dave Dyer> : Data Load
+## START BY <DAVE DYERr> : DATA LOAD
 
-source('../DataCleanup/GetData.R')
+source('DataCleanup/GetData.R')
+
 ## Check the data
 head(si)
 summary(si)
-str(si) # Very handy function!
+str(si) # Very handy function! Total obs for Staten Island 8081 before any clean up
 #Compactly display the internal structure of an R object.
 
-## End by <Dave Dyer> : Data Load
+## END BY <DAVE DYER> : DATA LOAD
 
-## Start by <Maryam Shahini> : Data Clean Up
+## START BY <MARYAM SHAHINI> : DATA FORMATTING
 
 ## clean/format the data with regular expressions
 ## More on these later. For now, know that the
@@ -25,11 +26,10 @@ str(si) # Very handy function!
 si$SALE.PRICE.N <- as.numeric(gsub("[^[:digit:]]","", si$SALE.PRICE))
 count(is.na(si$SALE.PRICE.N))
 
-## Kim Wong
 ## convert address to address.c (from factor to chr)
-si$address.c<-as.character(si$address)
+si$ADDRESS.C<-as.character(si$ADDRESS)
 ## convert apartment.number from factor to char 
-si$apartment.number.c <- as.character(si$apartment.number)
+si$APARTMENT.NUMBER.C <- as.character(si$APARTMENT.NUMBER)
 
 ##new changes in calculations for gross and land sqft column
 
@@ -43,15 +43,13 @@ names(si) <- tolower(names(si))
 
 
 ## Get rid of leading digits
-## Start by <Maryam Shahini>
-
 si$gross.sqft <- as.numeric(gsub("[^[:digit:]]","", si$gross.square.feet))
 si$land.sqft <- as.numeric(gsub("[^[:digit:]]","", si$land.square.feet))
 si$year.built <- as.numeric(as.character(si$year.built))
 
-## End by <Maryam Shahini> : Data Clean Up
+## END BY <MARYAM SHAHINI> : DATA FORMATTING
 
-## Start by <Kim Wong> : Data Exploration
+## START BY <KIM WONG> : DATA EXPLORATION
 
 ## do a bit of exploration to make sure there's not anything weird going on with sale prices
 
@@ -65,20 +63,27 @@ si.sale <- si[si$sale.price.n!=0,]      # should this be != NA?
 plot(si.sale$gross.sqft,si.sale$sale.price.n) # Plot to see any relationship between data [ data exploration]
 plot(log10(si.sale$gross.sqft),log10(si.sale$sale.price.n)) # Outliers above indicates doing a log transform might give better view
 
-## End by <Kim Wong> : Data Exploration
+## END BY <KIM WONG> : DATA EXPLORATION
 
-## Start by <Chiranjeevi Mallavarapu> : Data Analysis
+## START BY <CHIRANJEEVI MALLAVARAPU> : DATA ANALYSIS
 
 ## for now, let's look at 1-, 2-, and 3-family homes
 si.homes <- si.sale[which(grepl("FAMILY",si.sale$building.class.category)),]
-dim(si.homes)
-plot(log10(si.homes$gross.sqft),log10(si.homes$sale.price.n))
+dim(si.homes) 
+
+##lets again plot to see how the data is now showing up just for family homes
+plot(si.homes$gross.sqft,si.homes$sale.price.n) # Plot to see any relationship between data [ data exploration]
+plot(log10(si.homes$gross.sqft),log10(si.homes$sale.price.n)) #Outliers above indicates need for log transformation for better view
 summary(si.homes[which(si.homes$sale.price.n<100000),])
+str(si.homes[which(si.homes$sale.price.n<100000),]) # there seems to be 191 obs. that are less than $100,000 so we will go ahead remove them
 ""
 
 ## remove outliers that seem like they weren't actual sales
 si.homes$outliers <- (log10(si.homes$sale.price.n) <=5) + 0
+si.homes$outliers
+
 si.homes <- si.homes[which(si.homes$outliers==0),]
-plot(log10(si.homes$gross.sqft),log10(si.homes$sale.price.n))
+str(si.homes <- si.homes[which(si.homes$outliers==0),]) # After removing outliers a total of 4658 observatios are left out of total 8081
+plot(log10(si.homes$gross.sqft),log10(si.homes$sale.price.n)) # this data now looks clean without any major outliers ready for some visualization!
 
 ## End by <Chiranjeevi Mallavarapu> : Data Analysis
