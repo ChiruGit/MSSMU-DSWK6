@@ -1,6 +1,6 @@
 # Live Session Assignment 6
-## Case Study Practice - Due Tuesday June 20
-### Dave, Chiran, Kim, and Maryam 
+## Case Study Practice - Due Thursday June 23
+### Dave Dyer, Chiranjeevi Mallavarapu, Kim Wong, and Maryam Shahini 
 
 --- 
 
