@@ -4,7 +4,7 @@
 
 ## Start by <Dave Dyer> : Data Load
 
-source('../GetData.R')
+source('../DataCleanup/GetData.R')
 ## Check the data
 head(si)
 summary(si)
@@ -25,7 +25,14 @@ str(si) # Very handy function!
 si$SALE.PRICE.N <- as.numeric(gsub("[^[:digit:]]","", si$SALE.PRICE))
 count(is.na(si$SALE.PRICE.N))
 
+## Kim Wong
+## convert address to address.c (from factor to chr)
+si$address.c<-as.character(si$address)
+## convert apartment.number from factor to char 
+original.si$apartment.number.c <- as.character(original.si$apartment.number)
+
 ##new changes in calculations for gross and land sqft column
+
 si$GROSS.SQUARE.FEET.N <- as.numeric(gsub("[^[:digit:]]","", si$GROSS.SQUARE.FEET))
 count(is.na(si$GROSS.SQUARE.FEET.N))
 si$LAND.SQUARE.FEET.N <- as.numeric(gsub("[^[:digit:]]","", si$LAND.SQUARE.FEET))
