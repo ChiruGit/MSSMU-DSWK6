@@ -5,9 +5,12 @@
 library(plyr)
 
 # http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page
-setwd("/Users/bujji/Documents/MS_SMU/Git/MSSMU-DSWK6/Data Cleanup/Data/")
-# read csv file
-si <- read.csv("rollingsales_statenisland.csv",skip=4,header=TRUE)
+
+# Set root path of the project on your local computer -<this is the only change you need to do 
+setwd("/Users/cmallavarapu/Documents/Chiran/Git/MSSMU-DSWK6")
+
+# Program then goes to the Data folder to read csv file
+si <- read.csv("DataCleanup/Data/rollingsales_statenisland.csv",skip=4,header=TRUE)
 
 # bk <- read.csv("rollingsales_brooklyn.csv",skip=4,header=TRUE)
 
