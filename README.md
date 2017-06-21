@@ -8,7 +8,7 @@
 
 ---
 
-Below is from the assignment document given by Dr. Mahesh. 
+Below is from the assignment document given by Dr. Mahesh Fernando. 
 
 Using the Rolling Data Sales website, download and examine another housing sales data set (not the one we will use in live session, which is linked here - Rolling Housing Sales for NYC).
 (http://www1.nyc.gov/site/finance/taxes/property-rolling-sales-data.page)
