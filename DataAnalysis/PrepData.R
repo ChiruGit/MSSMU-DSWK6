@@ -86,4 +86,4 @@ si.homes <- si.homes[which(si.homes$outliers==0),]
 str(si.homes <- si.homes[which(si.homes$outliers==0),]) # After removing outliers a total of 4658 observatios are left out of total 8081
 plot(log10(si.homes$gross.sqft),log10(si.homes$sale.price.n)) # this data now looks clean without any major outliers ready for some visualization!
 
-## End by <Chiranjeevi Mallavarapu> : Data Analysis
+## END BY <CHIRANJEEVI MALLAVARAPU> : DATA ANALYSIS
