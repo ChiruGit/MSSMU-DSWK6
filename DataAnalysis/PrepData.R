@@ -31,16 +31,8 @@ si$ADDRESS.C<-as.character(si$ADDRESS)
 ## convert apartment.number from factor to char 
 si$APARTMENT.NUMBER.C <- as.character(si$APARTMENT.NUMBER)
 
-##new changes in calculations for gross and land sqft column
-
-si$GROSS.SQUARE.FEET.N <- as.numeric(gsub("[^[:digit:]]","", si$GROSS.SQUARE.FEET))
-count(is.na(si$GROSS.SQUARE.FEET.N))
-si$LAND.SQUARE.FEET.N <- as.numeric(gsub("[^[:digit:]]","", si$LAND.SQUARE.FEET))
-count(is.na(si$LAND.SQUARE.FEET.N))
-
-## it converts everything variable names to lower case
+## it converts every variable names to lower case
 names(si) <- tolower(names(si))
-
 
 ## Get rid of leading digits
 si$gross.sqft <- as.numeric(gsub("[^[:digit:]]","", si$gross.square.feet))
