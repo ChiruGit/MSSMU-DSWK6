@@ -69,7 +69,7 @@ plot(log10(si.sale$gross.sqft),log10(si.sale$sale.price.n)) # Outliers above ind
 
 ## for now, let's look at 1-, 2-, and 3-family homes
 si.homes <- si.sale[which(grepl("FAMILY",si.sale$building.class.category)),]
-dim(si.homes) 
+#dim(si.homes) 
 
 ##lets again plot to see how the data is now showing up just for family homes
 plot(si.homes$gross.sqft,si.homes$sale.price.n) # Plot to see any relationship between data [ data exploration]
@@ -80,7 +80,7 @@ str(si.homes[which(si.homes$sale.price.n<100000),]) # there seems to be 191 obs.
 
 ## remove outliers that seem like they weren't actual sales
 si.homes$outliers <- (log10(si.homes$sale.price.n) <=5) + 0
-si.homes$outliers
+#si.homes$outliers
 
 si.homes <- si.homes[which(si.homes$outliers==0),]
 str(si.homes <- si.homes[which(si.homes$outliers==0),]) # After removing outliers a total of 4658 observatios are left out of total 8081
