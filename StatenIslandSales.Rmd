@@ -1,0 +1,17 @@
+---
+title: "MSSMUDSWK6"
+author: "Chiranjeevi Mallavarapu"
+date: "6/23/2017"
+output: 
+  html_document:
+    keep_md: true
+---
+
+```{r }
+knitr::opts_chunk$set(echo = TRUE)
+source('DataAnalysis/PrepData.R')
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
